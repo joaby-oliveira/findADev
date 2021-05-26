@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=VT323&display=swap');
+
+:root {
+    --color-black1: #08080C;
+    --color-black2: #111117;
+    --color-black3: #292932;
+    --color-white1: #FFFFFF;
+    --color-white2: #E2E2E9;
+    --color-white3: #B9B9C6;
+    --color-enphasis1: #5452E0;
+    --color-enphasis2: #4442D7;
+    --color-enphasis3: #2926D8;
+    --color-enphasis4: #1F1DC9;
+    --color-enphasis5: #1714B8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Rubik;
+}
+
+body {
+    background-color: var(--color-black2);
+}
+
+/* Drying the flex */
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.mainCenter {
+    justify-content: center;
+}
+
+.crossCenter {
+    align-items: center;
+}
+
+.mainSpaceBetween {
+    justify-content: space-between;
+}
+
+/* Navbar */
+
+.navbar {
+    width: 100%;
+    padding: 2rem 4rem;
+    background: var(--color-black2);
+    box-shadow: 0px 20px 40px rgba(8, 8, 12, 0.25);
+}
+
+/* Search */
+
+.searchContainer {
+    background: url('../img/background.svg') center;
+    padding: 2rem 0;
+}
+
+.searchContainer > img {
+    margin-top: 2rem;
+    width: 19.375rem;
+}
+
+.searchContainer .searchBar {
+    border: 2px solid var(--color-white1);
+    padding: 0 2rem 0 2rem;
+    margin: 2rem 0;
+    border-radius: 1.25rem;
+    width: 40rem;
+}
+
+.searchBar .search {
+    background: none;
+    border: none;
+    height: 4rem;
+    color: var(--color-white1);
+    border-radius: 1.25rem;
+    width: 100%;
+    font-size: .875rem;
+}
+
+.search::placeholder {
+    color: var(--color-white2);
+}
+
+.searchBar .searchButton {
+    display: block;
+    width: 1.5rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.searchButton:hover {
+    transform: scale(1.1);
+}
+
+/* Dev preview */
+.container {
+    width: 100%;
+    padding: 4rem 8rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container .dev {
+    max-width: 15rem;
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid var(--color-black3);
+    border-radius: 1.25rem;
+    opacity: .5;
+    transform: scale(1.1);
+    animation: animate .4s forwards;
+}
+
+.dev img {
+    width: 12.75rem;
+    height: 12.75rem;
+    border-radius: .625rem;
+    background: url('../img/best-pic.jpg') center;
+    background-size: cover;
+    margin-bottom: 1rem;
+}
+
+.dev h2, .dev p {
+    font-weight: 400;
+}
+
+.dev h2 {
+    color: var(--color-white1);
+    font-size: 1.125rem;
+    margin-bottom: .5rem;
+}
+
+.dev p {
+    color: var(--color-white3);
+    font-size: .875rem;
+    margin-bottom: 1rem;
+}
+
+.dev button {
+    border: 0;
+    padding: 1rem 0;
+    width: 100%;
+    background: var(--color-enphasis3);
+    color: var(--color-white1);
+    border: 2px solid var(--color-enphasis5);
+    border-radius: .625rem;
+    box-shadow: 0px 5px 10px rgba(41, 38, 216, 0.15);
+    font-family: VT323;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dev button:hover {
+    background: var(--color-enphasis4);
+}
+
+.notFound {
+    font-size: 1.5rem;
+    color: var(--color-black3);
+    transform: scale(1.1);
+    opacity: .5rem;
+    animation: animate .4s forwards;
+    user-select: none;
+}
+
+@keyframes animate {
+    to{
+        opacity: initial;
+        transform: initial;
+    }
+}
