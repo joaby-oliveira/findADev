@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=VT323&display=swap');
 
 :root {
-    --color-black1: #08080C;
-    --color-black2: #111117;
-    --color-black3: #292932;
-    --color-white1: #FFFFFF;
-    --color-white2: #E2E2E9;
-    --color-white3: #B9B9C6;
+    --color-primary1: #08080C;
+    --color-primary2: #111117;
+    --color-primary3: #292932;
+    --color-secondary1: #FFFFFF;
+    --color-secondary2: #E2E2E9;
+    --color-secondary3: #B9B9C6;
     --color-enphasis1: #5452E0;
     --color-enphasis2: #4442D7;
     --color-enphasis3: #2926D8;
@@ -23,7 +23,7 @@
 }
 
 body {
-    background-color: var(--color-black2);
+    background-color: var(--color-primary2);
 }
 
 /* Drying the flex */
@@ -52,8 +52,17 @@ body {
 .navbar {
     width: 100%;
     padding: 2rem 4rem;
-    background: var(--color-black2);
+    background: var(--color-primary2);
     box-shadow: 0px 20px 40px rgba(8, 8, 12, 0.25);
+}
+
+.themeButton {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.themeButton:hover {
+    transform: scale(1.1);
 }
 
 /* Search */
@@ -69,7 +78,7 @@ body {
 }
 
 .searchContainer .searchBar {
-    border: 2px solid var(--color-white1);
+    border: 2px solid #FFFFFF;
     padding: 0 2rem 0 2rem;
     margin: 2rem 0;
     border-radius: 1.25rem;
@@ -80,14 +89,18 @@ body {
     background: none;
     border: none;
     height: 4rem;
-    color: var(--color-white1);
+    color: #FFFFFF;
     border-radius: 1.25rem;
     width: 100%;
     font-size: .875rem;
 }
 
+.searchBar:hover{
+    box-shadow: 0px 0px 0px 4px var(--color-enphasis1);
+}
+
 .search::placeholder {
-    color: var(--color-white2);
+    color: #FFFFFF;
 }
 
 .searchBar .searchButton {
@@ -99,6 +112,11 @@ body {
 
 .searchButton:hover {
     transform: scale(1.1);
+}
+
+.focused {
+    transition: 0.2s;
+    box-shadow: 0px 0px 0px 4px var(--color-enphasis1);
 }
 
 /* Dev preview */
@@ -113,7 +131,7 @@ body {
     max-width: 15rem;
     padding: 1rem;
     margin: 1rem;
-    border: 2px solid var(--color-black3);
+    border: 2px solid var(--color-primary3);
     border-radius: 1.25rem;
     opacity: .5;
     transform: scale(1.1);
@@ -134,13 +152,13 @@ body {
 }
 
 .dev h2 {
-    color: var(--color-white1);
+    color: var(--color-secondary1);
     font-size: 1.125rem;
     margin-bottom: .5rem;
 }
 
 .dev p {
-    color: var(--color-white3);
+    color: var(--color-secondary3);
     font-size: .875rem;
     margin-bottom: 1rem;
 }
@@ -150,7 +168,7 @@ body {
     padding: 1rem 0;
     width: 100%;
     background: var(--color-enphasis3);
-    color: var(--color-white1);
+    color: #FFFFFF;
     border: 2px solid var(--color-enphasis5);
     border-radius: .625rem;
     box-shadow: 0px 5px 10px rgba(41, 38, 216, 0.15);
@@ -166,7 +184,7 @@ body {
 
 .notFound {
     font-size: 1.5rem;
-    color: var(--color-black3);
+    color: var(--color-primary3);
     transform: scale(1.1);
     opacity: .5rem;
     animation: animate .4s forwards;
