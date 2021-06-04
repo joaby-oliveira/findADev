@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=VT323&display=swap');
-
 :root {
     --color-primary1: #08080C;
     --color-primary2: #111117;
@@ -31,6 +30,7 @@ a {
 }
 
 /* Drying the flex */
+
 .flex {
     display: flex;
 }
@@ -76,7 +76,7 @@ a {
     padding: 2rem 0;
 }
 
-.searchContainer > img {
+.searchContainer>img {
     margin-top: 2rem;
     width: 19.375rem;
 }
@@ -99,7 +99,7 @@ a {
     font-size: .875rem;
 }
 
-.searchBar:hover{
+.searchBar:hover {
     box-shadow: 0px 0px 0px 4px var(--color-enphasis1);
 }
 
@@ -124,6 +124,7 @@ a {
 }
 
 /* Dev preview */
+
 .container {
     width: 100%;
     padding: 4rem 8rem;
@@ -196,13 +197,14 @@ a {
 }
 
 @keyframes animate {
-    to{
+    to {
         opacity: initial;
         transform: initial;
     }
 }
 
 /* Modal */
+
 .hidden {
     display: none;
 }
@@ -217,7 +219,7 @@ a {
     height: 100vh;
     top: 0;
     position: absolute;
-    background:rgba(0, 0, 0, .8);
+    background: rgba(0, 0, 0, .8);
 }
 
 .infoContainer {
@@ -229,10 +231,12 @@ a {
     position: relative;
     padding: 4rem 2rem;
 }
+
 .info {
     margin-left: 2rem;
     width: 100%;
 }
+
 .infoContainer header .name {
     color: var(--color-secondary1);
     margin-bottom: 0.25rem;
@@ -245,6 +249,7 @@ a {
 .infoContainer header .username {
     color: var(--color-secondary3);
 }
+
 .infoContainer header .username:after {
     content: '';
     display: block;
@@ -297,6 +302,7 @@ a {
     width: 100%;
     margin-top: 2rem;
 }
+
 .githubSeparator {
     margin: 0 1rem;
     user-select: none;
