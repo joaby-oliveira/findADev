@@ -203,6 +203,14 @@ a {
 }
 
 /* Modal */
+.hidden {
+    display: none;
+}
+
+.locked {
+    height: 100vh;
+    overflow: hidden;
+}
 
 .infoScreen {
     width: 100vw;
