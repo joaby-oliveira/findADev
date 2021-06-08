@@ -141,6 +141,10 @@ searchButton.addEventListener('click', async (e) => {
             })
             
             closeButton.addEventListener('click', () => {
+                const repoElements = document.querySelectorAll('.repoWrapper')
+                repoElements.forEach(repoElement => {
+                    repoElement.remove()
+                });
                 infoScreen.classList.add('hidden')
                 body.classList.remove('locked')
             })
