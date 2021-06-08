@@ -81,14 +81,68 @@ searchButton.addEventListener('click', async (e) => {
         container.innerHTML = ""
         container.appendChild(devElement)
         const viewProfileButton = document.querySelector('.dev button')
-        console.log(viewProfileButton);
 
-        viewProfileButton.addEventListener('click', () => {
+        viewProfileButton.addEventListener('click', async () => {
             infoScreen.classList.remove('hidden')
             body.classList.add('locked')
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            document.body.scrollTop = document.documentElement.scrollTop = 0
+
+            const infoProfileImage = document.querySelector('.info .profileImage')
+            const infoName = document.querySelector('.info .name')
+            const infoUsername = document.querySelector('.info .username')
+            const infoDesc = document.querySelector('.info .desc')
+            const infoWebsite = document.querySelector('.info .website')
+            const repoContainer = document.querySelector('.repoContainer')
+
+            infoProfileImage.src = person.avatar_url
+            infoName.innerHTML = person.name
+            infoUsername.innerHTML = "@" + person.login
+            infoDesc.innerHTML = person.bio
+            infoWebsite.innerHTML = person.blog
+            infoWebsite.href = person.blog
+            
+            const reposResult = await fetch(person.repos_url)
+            const repos = await reposResult.json()
+
+            repos.forEach((repo) => {
+                const repoWrapper = document.createElement('div')
+                repoWrapper.classList.add('repoWrapper')
+                
+                const repoLink = document.createElement('a')
+                repoLink.classList.add('repo')
+                repoLink.classList.add('flex')
+                repoLink.classList.add('crossCenter')
+                repoLink.href = repo.html_url
+                
+                const repoName = document.createElement('h2')
+                repoName.classList.add('repoName')
+                repoName.innerHTML = repo.name
+
+                const repoDesc = document.createElement('p')
+                repoDesc.classList.add('repoDesc')
+                repoDesc.innerHTML = repo.description
+
+                const repoInfo = document.createElement('div')
+                repoInfo.classList.add('repoInfo')
+                repoInfo.appendChild(repoName)
+                repoInfo.appendChild(repoDesc)
+
+                const bookIcon = document.createElement('img')
+                bookIcon.src = './assets/img/bookIcon.svg'
+                bookIcon.classList.add('bookIcon')
+
+                repoLink.appendChild(bookIcon)
+                repoLink.appendChild(repoInfo)
+
+                repoWrapper.appendChild(repoLink)
+                
+                repoContainer.appendChild(repoWrapper)
+                
+            })
+            
             closeButton.addEventListener('click', () => {
                 infoScreen.classList.add('hidden')
+                body.classList.remove('locked')
             })
         })
 
